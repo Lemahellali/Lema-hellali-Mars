@@ -5,8 +5,23 @@ body{
   padding: 0;
   text-align:center;
   font-size: 1rem;
+ 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 
 }
+header,
+section,
+footer {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+
 .nav{
   display: flex;
   justify-content:center;
@@ -15,40 +30,41 @@ body{
 }
 .header{
   padding: 2rem 1rem;
-  background-color: rgb(121, 175, 175);
-  color: bisque;
+  background-color: rgb(236, 240, 240);
+  color: rgb(27, 26, 26);
 }
 .header h1{
   font-size: 2rem;
 }
 .header p {
   font-size: 1rem;
-  color: rgb(12, 12, 12);
+  color: rgb(24, 23, 23);
 }
 
 
 
 .nav a {
-  text-decoration:rgb(42, 0, 139);
-  color: rgb(0, 0, 139);
+  text-decoration:rgb(22, 22, 23);
+  color: rgb(25, 25, 26);
   font-weight: bold;
+  background-color: white;
 }
 .Experience h2{
   margin-bottom: 20px;
-  background-color: rgb(60, 173, 169);
+  background-color: rgb(223, 231, 231);
 }
 .cards{
   display: flex;
   justify-content:center;
   gap: 20px;
-  background-color: cadetblue;
+  background-color: rgb(231, 240, 240);
 }
 .card{
   border: 2px solid;
   padding: 15px 25px;
   border-radius: 10px;
   min-width: 180px;
-  background-color: rgb(136, 136, 136);
+  background-color: rgb(244, 241, 241);
 }
 .card-one{
   background-color: rgb(0, 0, 0);
@@ -63,10 +79,10 @@ body{
   border-color: white;
 }
 .card-three{
-  background-color: rgb(2, 66, 2);
+  background-color: rgb(3, 86, 3);
   color: azure;
 
-  border-color: white;
+  border-color: rgb(231, 226, 226);
 
 }
 .footer{
@@ -77,7 +93,7 @@ body{
 }
 .footer a{
 margin: 0 10px;
-color: rgb(17, 53, 215);
+color: rgb(13, 13, 13);
 text-decoration:none;
 text-underline-position: below;
 justify-content: end;
@@ -87,7 +103,7 @@ justify-content: end;
 
   .header h1 {
     font-size: 2.5rem;
-    color: #4a3aff;
+    color: black;
   }
 
   .nav {
@@ -114,3 +130,38 @@ justify-content: end;
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#skills {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #333;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#skills li {
+  background-color: #f0f0f0;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+
+
+
