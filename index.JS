@@ -19,7 +19,7 @@ const skills = [
   "Accessibility Basic"
 ];
 
-//const skillsList = document.querySelector("#skillsList");
+const skillsList = document.querySelector("#skillsList");
 
 for (let i = 0; i < skills.length; i++) {
   const li = document.createElement("li");
@@ -27,37 +27,9 @@ for (let i = 0; i < skills.length; i++) {
   skillsList.appendChild(li);
 }
 const messageForm = document.querySelector("form[name='leave-message']");
-
-messageForm.addEventListener("submit", function (event){
-  event.preventDefault();
-  const userName = event.target.usersName.value;
-  const userEmail = event.target.usersEmail.value;
-  const userMessage = event.target.usersMessage.value;
-  console.log(userName, userEmail, userMessage);
-  messageForm.reset();
-
-});
 const messageSection = document.querySelector("#messages");
 const messageList = messageSection.querySelector("ul");
 
-const newMessage = document.createElement("li");
-
-newMessage.innerHTML = `
-  <a href="mailto:${userEmail}">${userName}</a>
-  <span>: ${userMessage}</span>
-`;
-
-const removeButton = document.createElement("button");
-removeButton.innerText = "remove";
-removeButton.type = "button";
-
-removeButton.addEventListener("click", function() {
-  const entry = removeButton.parentNode;
-  entry.remove();
-});
-
-newMessage.appendChild(removeButton);
-messageList.appendChild(newMessage);
 messageForm.addEventListener("submit", function(event) {
 
   event.preventDefault();
@@ -66,28 +38,49 @@ messageForm.addEventListener("submit", function(event) {
   const userEmail = event.target.usersEmail.value;
   const userMessage = event.target.usersMessage.value;
 
-  const messageSection = document.querySelector("#messages");
-  const messageList = messageSection.querySelector("ul");
-
   const newMessage = document.createElement("li");
 
-newMessage.innerHTML = `
-  <a href="mailto:${userEmail}">${userName}</a>
-  <span>: ${userMessage}</span>
-`;
-
+  newMessage.innerHTML = `
+    <a href="mailto:${userEmail}">${userName}</a>
+    <span>: ${userMessage}</span>
+  `;
 
   const removeButton = document.createElement("button");
   removeButton.innerText = "remove";
   removeButton.type = "button";
 
   removeButton.addEventListener("click", function() {
-    const entry = removeButton.parentNode;
-    entry.remove();
+    newMessage.remove();
   });
 
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
 
   messageForm.reset();
+
 });
+
+fetch("https://api.github.com/users/Lemahellali/repos")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(repositories) {
+
+    console.log(repositories);
+
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < repositories.length; i++) {
+
+      const project = document.createElement("li");
+
+      project.innerText = repositories[i].name;
+
+      projectList.appendChild(project);
+    }
+
+  })
+  .catch(function(error) {
+    console.error("Error fetching repos:", error);
+  });
