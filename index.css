@@ -161,7 +161,7 @@ body {
   padding: 10px;
   border-radius: 6px;
 }
-}
+
 #leave-message form {
   display: flex;
   flex-direction: column;
@@ -187,8 +187,16 @@ body {
   background-color: blue;
 }
 
-#messages {
-  display: none;
+
+#projects ul {
+  list-style:circle;
+  padding:10px;
+}
+
+#projects li {
+  margin: 20px 0;
+  padding: 10px;
+  background: rgb(147, 4, 4);
 }
 
 
