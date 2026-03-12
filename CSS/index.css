@@ -136,7 +136,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
 
-  background-image: url("background.jpg");
+ background-image: url("../Image/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -193,10 +193,11 @@ body {
   padding:10px;
 }
 
+
 #projects li {
+  
   margin: 20px 0;
   padding: 10px;
   background: rgb(147, 4, 4);
 }
-
 
